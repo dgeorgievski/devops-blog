@@ -1,0 +1,70 @@
+name: pinata-publish-release
+on:
+  release:
+    types:
+      - published
+
+jobs:
+  pinata_publish:
+    runs-on: ubuntu-18.04
+    steps:
+      - uses: actions/checkout@v1
+        with:
+          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal token
+          submodules: true  # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: '0.79.1'
+          # extended: true
+
+      - uses: actions/cache@v2
+        with:
+          path: /tmp/hugo_cache
+          key: ${{ runner.os }}-hugomod-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-hugomod-
+
+      - name: Build site
+        run: hugo --minify
+
+      - name: Pin content to Pinata IPFS
+        id: pinata
+        uses: aquiladev/ipfs-action@v0.1.5
+        with:
+          path: ./public
+          service: pinata
+          pinataKey: ${{ secrets.PINATA_API_KEY }}
+          pinataSecret: ${{ secrets.PINATA_API_SECRET }}
+
+      - name: Update deployment stats
+        shell: bash
+        run: |
+          now=$(date +"%m/%d/%Y %H:%M:%S")
+          hash=${{ steps.pinata.outputs.hash }}
+          echo "$now | $hash" >> doc/deployments.md
+
+          git config --local user.name "GH Actions"
+          git config --local user.email "actions@3bunara.xyz"
+          git add doc/deployments.md
+          git commit -m "[action] update deployment stats"
+
+      - name: Push deployment stats
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.GH_API_TOKEN }}
+          branch: master
+
+      - name: CloudFlare DNS update
+        uses: dgeorgievski/actions-coudflare-dns@e824c57
+      # uses: rez0n/create-dns-record@v2
+        with:
+          name: "_dnslink.3bunara.xyz"
+          type: "TXT"
+          content: "dnslink=/ipfs/${{ steps.pinata.outputs.hash }}"
+          ttl: 120 # min allowed
+          proxied: false
+          token: ${{ secrets.CF_API_DNS_TOKEN }}
+          zone: ${{ secrets.CF_DNS_ZONE_ID }}

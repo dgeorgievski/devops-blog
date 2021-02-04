@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>The DevOps of Small Things</title>
-    <link>/</link>
-    <description>Recent content on The DevOps of Small Things</description>
+    <title>Posts on The DevOps of Small Things</title>
+    <link>/posts/</link>
+    <description>Recent content in Posts on The DevOps of Small Things</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 04 Dec 2020 22:06:10 +0000</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 04 Dec 2020 22:06:10 +0000</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Things Can Change in a Day</title>
       <link>/posts/2020-12-03-things/</link>
@@ -46,15 +46,6 @@ Oh what a thing to have done
 And it was all Yellow
 噢这过程充满不安羞怯和点滴暖意
 Your skin</description>
-    </item>
-    
-    <item>
-      <title>About me</title>
-      <link>/about/</link>
-      <pubDate>Wed, 24 Aug 2016 17:51:42 +0000</pubDate>
-      
-      <guid>/about/</guid>
-      <description>Github: monkeyWzr</description>
     </item>
     
   </channel>
