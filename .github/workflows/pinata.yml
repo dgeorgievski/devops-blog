@@ -58,7 +58,7 @@ jobs:
           branch: master
 
       - name: CloudFlare DNS update
-        uses: dgeorgievski/actions-coudflare-dns@e824c57
+        uses: dgeorgievski/actions-coudflare-dns@e824c57bcc0c1436cf7c9921dc8bd855109c287c
       # uses: rez0n/create-dns-record@v2
         with:
           name: "_dnslink.3bunara.xyz"
