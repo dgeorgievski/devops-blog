@@ -20,7 +20,7 @@ jobs:
 
       - name: Build
         run: |
-          npm install --global gatsby-cli
+          npm install
           npm run build
 
       - name: Pin content to Pinata IPFS
