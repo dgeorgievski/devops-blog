@@ -3,11 +3,19 @@ relativeURLs = true
 languageCode = "en-us"
 title = "Dimitar Georgievski"
 theme = "cactus"
+copyright = "Dimitar Georgievski"
 
 [params]
+  colortheme = "white" # dark, light, white, or classic
   description = "Everyone is a DevOps now"
   mainSection = "posts"
   tagsOverview = true
+  showAllPostsOnHomePage = false # default
+  postsOnHomePage = 10 # this option will be ignored if showAllPostsOnHomePage is set to true
+
+  # Post page settings
+  show_updated = true # default
+  showReadTime = true # default
 
 [[params.social]]
   name = "github"
@@ -40,3 +48,10 @@ weight = 3
 name = "About"
 url = "/about"
 weight = 4
+
+[markup]
+  [markup.tableOfContents]
+    endLevel = 4
+    ordered = false
+    startLevel = 2
+
