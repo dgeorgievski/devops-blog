@@ -1,0 +1,42 @@
+baseURL = "/"
+relativeURLs = true
+languageCode = "en-us"
+title = "Dimitar Georgievski"
+theme = "cactus"
+
+[params]
+  description = "Everyone is a DevOps now"
+  mainSection = "posts"
+  tagsOverview = true
+
+[[params.social]]
+  name = "github"
+  link = "https://github.com/dgeorgievski"
+
+[[params.social]]
+  name = "email"
+  link = "dgeorgievski@gmail.com" # no need for "mailto:" at the start
+
+[[params.social]]
+  name = "linkedin"
+  link = "https://www.linkedin.com/in/dimitar-georgievski-11a2218"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "About"
+url = "/about"
+weight = 4
