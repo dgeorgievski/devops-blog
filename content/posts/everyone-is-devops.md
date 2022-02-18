@@ -2,6 +2,9 @@
 title: "Everyone Is A Devops Now"
 date: 2021-07-01T20:18:58-04:00
 draft: false
+tags: [
+    "git",
+]
 ---
 
 I’d argue if your users are not contributing to automation of the infrastructure and cloud services, they care the most than you are a sys admin in disguise.  
