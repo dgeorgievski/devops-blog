@@ -15,7 +15,7 @@ My blog will live to fight that argument another day. In the meantime, I’d be 
 
 ## On the importance of writing 
 
-I love reading Nathan Martz’s blog since discovering Clojure first and then his project Apache Storm, a real time stream processing engine. Those were the days when I was immersed in BigData technologies and projects. He is a great writer and simply suggests writing makes you a better reader and smarter. 
+I love reading Nathan Martz’s blog since discovering Clojure first and then his project Apache Storm, a real time stream processing engine. Those were the days when I was immersed in BigData technologies and projects. He is a great writer and simply [suggests writing makes you a better reader and smarter](http://nathanmarz.com/blog/you-should-blog-even-if-you-have-no-readers.html). 
 
 We become more receptive to other people’s ideas and learn how to structure our train of thoughts to be better understood. Instead of wasting energy on unproductive counter claims, for the sake of an argument, we are more likely to engage in meaningful discussions by focusing on the important parts. 
 
