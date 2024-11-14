@@ -1,6 +1,7 @@
 ---
-title: "What's a DevoOs?"
-date: 2022-02-20T23:08:39-05:00
+title: "What's a DevOps?"
+linktitle: What's a DevOps?
+date: 2022-02-20
 draft: false
 tags: [
     "do-it",

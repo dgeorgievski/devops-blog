@@ -1,6 +1,7 @@
 ---
 title: "Everyone Is A Devops Now"
-date: 2021-07-01T20:18:58-04:00
+linktitle: Everyone Is A Devops Now
+date: 2021-07-01
 draft: false
 tags: [
     "git",

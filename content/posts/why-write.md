@@ -1,6 +1,7 @@
 ---
 title: "Why write, really?"
-date: 2022-02-13T17:53:28-05:00
+linkTitle: Why write, really?
+date: 2022-02-13
 draft: false
 tags: [
     "write",

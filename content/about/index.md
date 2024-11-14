@@ -4,7 +4,6 @@ date: 2021-07-01T20:47:19-04:00
 draft: false
 ---
 
-# About
 My DevOps blog has been long overdue. I just couldn’t find the time or the right platform to host it. WordPress or Drupal would not cut it. I helped friends to use them but was never attracted to them. What to say of bloated, badly engineered, and hard to manage apps that forces its users to become MySQL experts?
 
 The turning point came when I got exposed to [IPFS](https://ipfs.io/) and was eager to show case it in combination with static Web site generators like [Hugo](https://gohugo.io/) or [GatsbyJS](https://www.gatsbyjs.com/) as a modern, lightweight, and cost-effective alternative to traditional CMS mastodonts. 
