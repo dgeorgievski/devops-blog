@@ -1,64 +1,103 @@
 baseURL = "/"
 relativeURLs = true
+canonifyURLs = true
 title = "Dimitar Georgievski"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 copyright = "Copyright &copy; 2024 - Dimitar Georgievski"
-canonifyurls = true
-theme = "hugo-kiera"
+theme = "blowfish"
+
+summaryLength = 20
+enableEmoji = true
+enableRobotsTXT = true
 
 [pagination]
-  pagersize = 5
-  path = 'page'
+  pagerSize = 10
 
-summaryLength = 10
-enableEmoji = true
-pygmentsCodeFences = true
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+  series = "series"
 
-#disqusShortname = "myShortName"
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
 
-# Note: to disable a social network icon delete or comment out the corresponding line
-[params.author]
-    name = "Dimitar Georgievski"
-    github = "dgeorgievski"
-    #gitlab = "username"
-    linkedin = "dimitar-georgievski-11a2218"
-    #facebook = "username"
-    twitter = "@3bunara"
-    #instagram = "username"
-    #stackoverflow = "username"
-    #youtube = "user/username" # or channel/channelname
-    #devto = "username"
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.parser]
+      wrapStandAloneImageWithinParagraph = false
+      [markup.goldmark.parser.attribute]
+        block = true
+    [markup.goldmark.renderer]
+      unsafe = true
+  [markup.highlight]
+    noClasses = false
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 4
 
 [params]
-    tagline = "Everyone is a DevOps now"
-    description = "Kiera: A Hugo theme for creative and technical writing."
-    images = [""] #This is used for opengraph/twitter cards.
-    customCSS = []  #Optional Customised CSS
-    #favicon = ""
-    #utterancesRepo = "username/repository"
-    #utterancesIssueTerm = "pathname"
-    #homepageLength = 10
-    #commentAutoload = true  #This mean reader don't need click, disqus comment autoload
-    mathjax = true #Enable display of mathematics using mathjax (LaTeX syntax)
-    #katex = true #Enable display of mathematics using katex (Faster LaTeX rendering)
-    #google_fonts = ["Staatliches"] # Adds additional google fonts
-    #disableDarkModeCSS = false # disables css style for users using dark-mode
+  description = "DevSecOps, platform engineering, automation, and applied AI."
+  colorScheme = "blowfish"
+  defaultAppearance = "dark"
+  autoSwitchAppearance = true
+  enableSearch = true
+  enableCodeCopy = true
+  mainSections = ["posts"]
 
-# uncomment to enable the Tags link on the main toolbar
+[params.author]
+  name = "Dimitar Georgievski"
+  headline = "DevSecOps, platform engineering, automation, and applied AI."
+  bio = "Writing about the practical intersection of DevSecOps and AI."
+  links = [
+    { github = "https://github.com/dgeorgievski" },
+    { linkedin = "https://www.linkedin.com/in/dimitar-georgievski-11a2218/" },
+    { x-twitter = "https://twitter.com/3bunara" }
+  ]
+
+[params.header]
+  layout = "fixed-fill-blur"
+
+[params.footer]
+  showMenu = true
+  showCopyright = true
+  showThemeAttribution = true
+  showAppearanceSwitcher = true
+  showScrollToTop = true
+
+[params.homepage]
+  layout = "profile"
+  showRecent = true
+  showRecentItems = 5
+  showMoreLink = true
+  showMoreLinkDest = "/posts/"
+  cardView = true
+
+[params.article]
+  showAuthor = true
+  showDate = true
+  showReadingTime = true
+  showWordCount = true
+  showHeadingAnchors = true
+  showPagination = true
+  showTaxonomies = true
+  showTags = true
+  showCategories = true
+  sharingLinks = ["linkedin", "x-twitter", "reddit", "email"]
+
+[params.list]
+  showSummary = true
+  showCards = true
+  cardView = true
+  groupByYear = true
+
 [[menu.main]]
-   identifier = "tags"
-   name = "Tags"
-   url = "/tags"
-   weight = 1
-
-# uncomment to enable the Categories link on the main toolbar
-#  [[menu.main]]
-#   identifier = "categories"
-#   name = "Categories"
-#   url = "/categories"
-#   weight = 1
+  name = "Tags"
+  pageRef = "tags"
+  weight = 20
 
 [[menu.main]]
   name = "About"
-  url = "/about"
-  weight = 4
+  pageRef = "about"
+  weight = 30
