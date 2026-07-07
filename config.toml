@@ -1,5 +1,5 @@
-baseURL = "/"
-relativeURLs = true
+baseURL = "https://3bunara.xyz/"
+relativeURLs = false
 canonifyURLs = true
 title = "Dimitar Georgievski"
 languageCode = "en-us"
