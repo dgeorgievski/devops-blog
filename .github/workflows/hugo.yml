@@ -12,6 +12,9 @@ permissions:
   pages: write
   id-token: write
 
+env:
+  HUGO_VERSION: "0.155.3"
+
 concurrency:
   group: pages
   cancel-in-progress: false
@@ -32,19 +35,27 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: "0.155.3"
+          hugo-version: ${{ env.HUGO_VERSION }}
           extended: true
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
       - name: Build with Hugo
-        run: hugo --gc --minify
+        run: hugo --gc --minify --baseURL "https://3bunara.xyz/"
+
+      - name: Verify Pages artifact root
+        run: |
+          test -f public/index.html
+          test -f public/CNAME
+          test "$(cat public/CNAME)" = "3bunara.xyz"
+          test -f public/.nojekyll
+          find public -maxdepth 2 -type f | sort | sed -n '1,80p'
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ./public
+          path: public
 
   deploy:
     environment:
